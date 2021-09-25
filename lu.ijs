@@ -11,9 +11,9 @@ for_i. i. d do.  NB. for each ring
   pivot =. col {~ pivotx =. (i. >./) | col  NB. find index of largest absolute value; save the value as pivot
   NB. swap the permutation array, and swap the rows of the matrix, and the values read for current column
   col =. ((0,pivotx){col) (0,~pivotx)} col
-  y =. ((i,i+pivotx){y) (i.~i+pivotx)} y
-  pv =. ((i,i+pivotx){pv) (i.~i+pivotx)} pv
-  col =. (}. col) * %pv  NB. divide the current column by the pivot
+  y =. ((i,i+pivotx){y) (i,~i+pivotx)} y
+  pv =. ((i,i+pivotx){pv) (i,~i+pivotx)} pv
+  col =. (}. col) * %pivot  NB. divide the current column by the pivot
   remvec =. }. remvec  NB.  shorten the fetch vectors by 1 from the front
   y =. col (<remvec;i)} y  NB. store the current column into the array as L; leave U unchanged
   y =. (((<remvec;remvec) { y) - col */ (<i;remvec) { y) (<remvec;remvec)} y  NB. subtract (current column */ (}.first row)) from lower-right block
