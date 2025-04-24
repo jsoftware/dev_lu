@@ -6,7 +6,7 @@ DESCRIPTION=: 0 : 0
 J LU code, called from 128!:10
 )
 
-VERSION=: '1.0.4'
+VERSION=: '1.0.5'
 
 FILES=: 0 : 0
 lu.ijs

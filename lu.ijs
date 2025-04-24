@@ -18,11 +18,5 @@ for_i. i. d do.  NB. for each ring
   y =. col (<remvec;i)} y  NB. store the current column into the array as L; leave U unchanged
   y =. (((<remvec;remvec) { y) - col */ (<i;remvec) { y) (<remvec;remvec)} y  NB. subtract (current column */ (}.first row)) from lower-right block
 end.
-NB. convert ipiv to selection vector
-z=. i.#pv
-for_i. i.-#pv do.
- t=. i{z
- z=. t (i{pv)} ((i{pv){z) i}z
-end.
-z;y
+pv;y
 )
